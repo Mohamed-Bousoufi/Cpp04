@@ -1,0 +1,18 @@
+Polymorphism: 
+this means that things in your program can act differently based on the context.
+(Greek “poly” means many, “morph” means form; so the word means “many forms”)
+
+Virtual Destructor :
+
+is specific special member function that ensure to have call the correct Destructor for child class to avoid resource leaks 
+
+Shallow Copy :
+
+In shallow copy, an object is created by simply copying the data of all variables of the original object. This works well if none of the variables of the object are defined in the heap section of memory. If some variables are dynamically allocated memory from heap section, then the copied object variable will also reference the same memory location.
+
+This will create ambiguity and run-time errors,
+Since both objects will reference to the same memory location,then change made by one will reflect those change in another object as well.
+
+Deep Copy:
+
+In Deep copy, an object is created by copying data of all variables, and it also allocates similar memory resources with the same value to the object.
