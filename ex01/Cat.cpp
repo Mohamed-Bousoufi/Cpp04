@@ -2,22 +2,29 @@
 Cat :: Cat()
 {
     this->type = "Cat";
+    this->_Brain = new Brain();
 
     std :: cout << "Cat Constructor Called" << std :: endl;
 }
 
-Cat :: Cat(Cat &copy)
+Cat :: Cat(const Cat &copy)
 {
     *this = copy;
 }
 
-void Cat :: operator=(const Cat &copy)
+ void Cat :: operator=(const Cat &copy)
 {
-    this->type = copy.getType();
+        this->type = copy.type;
+    if(this->_Brain)
+        delete _Brain;
+    this->_Brain = new Brain();
+    if(copy._Brain)
+        *_Brain = *copy._Brain;
 }
 
 Cat :: ~Cat()
 {
+    delete _Brain;
     std :: cout << "Cat Destructor Called" << std :: endl;
 }
 

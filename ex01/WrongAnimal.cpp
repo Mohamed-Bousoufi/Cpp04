@@ -8,12 +8,12 @@ WrongAnimal :: WrongAnimal()
 }
 
 
-void WrongAnimal :: operator=(WrongAnimal &copy)
+void WrongAnimal :: operator=(const WrongAnimal &copy)
 {
     this->type = copy.type;
 }
 
-WrongAnimal :: WrongAnimal(WrongAnimal &copy)
+WrongAnimal :: WrongAnimal(const WrongAnimal &copy)
 {
     *this = copy;
 }

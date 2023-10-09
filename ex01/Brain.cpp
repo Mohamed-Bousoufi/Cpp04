@@ -14,3 +14,9 @@ void Brain :: operator=(const Brain &copy)
 {
     *(this->ideas) = *(copy.ideas);
 }
+
+
+Brain :: ~Brain()
+{
+    std :: cout << "Brain Destructor" << std :: endl;
+}

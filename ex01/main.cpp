@@ -3,27 +3,24 @@
 #include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-const WrongAnimal *b = new WrongAnimal();
-const WrongCat *c = new WrongCat();
-
-std::cout << b->getType() << " " << std::endl;
-std::cout << c->getType() << " " << std::endl;
-b->makeSound(); //will output the cat sound!
-c->makeSound();
-
-delete i;
-delete j;
-delete b;
-delete c;
+    int size = 10;
+    Animal *Array[size];
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    
+    delete j;//should not create a leak
+    delete i;
+    
+    for(int index = 0; index < size/2;index++)
+        Array[index] =  new Dog();
+    for(int index = size/2 ; index < size;index++)
+        Array[index] =  new Cat();
+    for(int index = 0; index < size;index++)
+       delete Array[index];
+    
+    return 0;
 }

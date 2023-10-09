@@ -13,7 +13,7 @@ void Animal :: operator=(const Animal &copy)
     this->type = copy.type;
 }
 
-Animal :: Animal(Animal &copy)
+Animal :: Animal(const Animal &copy)
 {
     *this = copy;
 }

@@ -3,12 +3,16 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
+
+    private :
+            Brain * _Brain;
     public :
         Dog();
-        Dog(Dog &copy);
+        Dog(const Dog &copy);
         void operator=(const Dog &copy);
         ~Dog();
 

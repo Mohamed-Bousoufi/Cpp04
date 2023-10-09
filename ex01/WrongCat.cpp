@@ -6,12 +6,12 @@ WrongCat :: WrongCat()
     std :: cout << "WrongCat Constructor Called" << std :: endl;
 }
 
-WrongCat :: WrongCat(WrongCat &copy)
+WrongCat :: WrongCat( WrongCat &copy)
 {
     *this = copy;
 }
 
-void WrongCat :: operator=(WrongCat &copy)
+void WrongCat :: operator=(const WrongCat &copy)
 {
     this->type = copy.getType();
 }

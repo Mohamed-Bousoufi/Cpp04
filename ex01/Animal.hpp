@@ -9,7 +9,7 @@ class Animal
     public :
         Animal();
         void operator =(const Animal &copy);
-        Animal(Animal &copy);
+        Animal(const Animal &copy);
         virtual void makeSound() const;
         std :: string  getType() const;
         virtual ~Animal();

@@ -5,13 +5,13 @@
 class Brain
 {
     private :
-        std :: string *ideas[100];
+        std :: string ideas[100];
     
     public :
 
         Brain();
-        Brain(const Brain &copy);
-        void operator =(Brain &copy);
+        Brain(Brain &copy);
+        void operator =(const Brain &copy);
         ~Brain();
 };
 #endif

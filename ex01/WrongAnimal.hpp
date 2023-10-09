@@ -8,8 +8,8 @@ class WrongAnimal
         std::string type;
     public :
         WrongAnimal();
-        void operator =(WrongAnimal &copy);
-        WrongAnimal(WrongAnimal &copy);
+        void operator =(const WrongAnimal &copy);
+        WrongAnimal(const WrongAnimal &copy);
         virtual void makeSound() const;
         std :: string  getType() const;
         virtual ~WrongAnimal();
