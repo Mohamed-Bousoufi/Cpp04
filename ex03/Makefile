@@ -1,8 +1,8 @@
-Name = Animal
+Name =  Materia
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
-HEADERS = Animal.hpp  Cat.hpp  WrongAnimal.hpp WrongCat.hpp Brain.hpp
+HEADERS = AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp IMateriaSource.hpp MateriaSource.hpp
 
 CC = c++ -Wall -Wextra -Werror -Wshadow -std=c++98 
 

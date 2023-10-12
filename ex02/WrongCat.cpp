@@ -1,7 +1,6 @@
 #include "WrongCat.hpp"
-WrongCat :: WrongCat()
+WrongCat :: WrongCat() : WrongAnimal("WrongCat")
 {
-    this->type = "WrongCat";
 
     std :: cout << "WrongCat Constructor Called" << std :: endl;
 }
@@ -11,9 +10,10 @@ WrongCat :: WrongCat( WrongCat &copy)
     *this = copy;
 }
 
-void WrongCat :: operator=(const WrongCat &copy)
+WrongCat & WrongCat :: operator=(const WrongCat &copy)
 {
     this->type = copy.getType();
+    return(*this);
 }
 
 WrongCat :: ~WrongCat()

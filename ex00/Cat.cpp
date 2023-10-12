@@ -1,19 +1,19 @@
 #include "Cat.hpp"
-Cat :: Cat()
+Cat :: Cat() : Animal("Cat")
 {
-    this->type = "Cat";
 
-    std :: cout << "Cat Constructor Called" << std :: endl;
+    std :: cout << "Cat Default Constructor Called" << std :: endl;
 }
 
-Cat :: Cat(Cat &copy)
+Cat :: Cat(const Cat &copy)
 {
     *this = copy;
 }
 
-void Cat :: operator=(Cat &copy)
+Cat & Cat :: operator=(const Cat &copy)
 {
     this->type = copy.getType();
+    return(*this);
 }
 
 Cat :: ~Cat()

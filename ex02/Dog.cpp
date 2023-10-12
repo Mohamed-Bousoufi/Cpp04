@@ -1,11 +1,10 @@
 #include "Dog.hpp"
 
-Dog :: Dog()
-{
-    this->type = "Dog";
-    this->_Brain = new Brain();
 
-    std :: cout << "Dog Default Constructor" << std :: endl;
+Dog :: Dog() : Animal("Dog")
+{
+    this->_Brain = new Brain();
+    std :: cout << "Dog Default Constructor Called" << std :: endl;
 }
 
 Dog :: Dog(const Dog &copy)
@@ -13,14 +12,14 @@ Dog :: Dog(const Dog &copy)
     *this = copy; 
 }
 
-void Dog :: operator=(const Dog &copy)
+Dog & Dog :: operator=(const Dog &copy)
 {
     this->type = copy.type;
     if(this->_Brain)
         delete _Brain;
-    this->_Brain = new Brain();
-    if(copy._Brain)
-        *_Brain = *copy._Brain;
+    _Brain = new Brain();
+    *this->_Brain = *copy._Brain;
+    return(*this);
 }
 
 Dog :: ~Dog()

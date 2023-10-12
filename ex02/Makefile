@@ -9,7 +9,6 @@ CC = c++ -Wall -Wextra -Werror -Wshadow -std=c++98
 OBJ = $(SRC:.cpp=.o)
 
 all: $(Name)
-	rm -rf $(OBJ)
 
 $(Name): $(OBJ)
 	$(CC) $(OBJ) -o $(Name)

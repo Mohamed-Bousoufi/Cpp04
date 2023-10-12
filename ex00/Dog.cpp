@@ -1,20 +1,20 @@
 #include "Dog.hpp"
 
-Dog :: Dog()
+Dog :: Dog() : Animal("Dog")
 {
-    this->type = "Dog";
 
-    std :: cout << "Dog Default Constructor" << std :: endl;
+    std :: cout << "Dog Default Constructor Called" << std :: endl;
 }
 
-Dog :: Dog(Dog &copy)
+Dog :: Dog(const Dog &copy)
 {
     *this = copy; 
 }
 
-void Dog :: operator=(Dog &copy)
+Dog & Dog :: operator=(const Dog &copy)
 {
     this->type = copy.type;
+    return(*this);
 }
 
 Dog :: ~Dog()

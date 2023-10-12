@@ -1,19 +1,24 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal :: WrongAnimal()
+WrongAnimal :: WrongAnimal() : type("WrongAnimal")
 {
-    type = "WrongAnimal";
 
-    std :: cout << "WrongAnimal Costructor Called" << std :: endl;
+    std :: cout << "WrongAnimal Default Costructor Called" << std :: endl;
 }
 
+WrongAnimal :: WrongAnimal(const std :: string type) : type(type)
+{
+    std :: cout << "WrongAnimal Costructor Called" << std :: endl;
 
-void WrongAnimal :: operator=(WrongAnimal &copy)
+}
+
+WrongAnimal & WrongAnimal :: operator=(const WrongAnimal &copy)
 {
     this->type = copy.type;
+    return(*this);
 }
 
-WrongAnimal :: WrongAnimal(WrongAnimal &copy)
+WrongAnimal :: WrongAnimal(const WrongAnimal &copy)
 {
     *this = copy;
 }

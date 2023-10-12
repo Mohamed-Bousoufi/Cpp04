@@ -11,7 +11,7 @@ class Brain
 
         Brain();
         Brain(Brain &copy);
-        void operator =(const Brain &copy);
+        Brain & operator =(const Brain &copy);
         ~Brain();
 };
 #endif

@@ -10,9 +10,10 @@ Brain :: Brain(Brain &copy)
     *this = copy;
 }
 
-void Brain :: operator=(const Brain &copy)
+Brain & Brain :: operator=(const Brain &copy)
 {
     *(this->ideas) = *(copy.ideas);
+    return(*this);
 }
 
 

@@ -1,10 +1,8 @@
 #include "Cat.hpp"
-Cat :: Cat()
+Cat :: Cat() : Animal("Cat")
 {
-    this->type = "Cat";
     this->_Brain = new Brain();
-
-    std :: cout << "Cat Constructor Called" << std :: endl;
+    std :: cout << "Cat Default Constructor Called" << std :: endl;
 }
 
 Cat :: Cat(const Cat &copy)
@@ -12,14 +10,14 @@ Cat :: Cat(const Cat &copy)
     *this = copy;
 }
 
- void Cat :: operator=(const Cat &copy)
+Cat & Cat :: operator=(const Cat &copy)
 {
-        this->type = copy.type;
+    this->type = copy.getType();
     if(this->_Brain)
         delete _Brain;
-    this->_Brain = new Brain();
-    if(copy._Brain)
-        *_Brain = *copy._Brain;
+    _Brain = new Brain();
+    *this->_Brain = *copy._Brain;
+    return(*this);
 }
 
 Cat :: ~Cat()

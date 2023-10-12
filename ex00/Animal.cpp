@@ -1,26 +1,30 @@
 #include "Animal.hpp"
 
-Animal :: Animal()
+Animal :: Animal() : type ("Animal")
 {
-    type = "Animal";
+    std :: cout << "Animal Default Costructor Called" << std :: endl;
+}
+Animal :: Animal(const std :: string type) : type(type)
+{
 
-    std :: cout << "Animal Costructor Called" << std :: endl;
+    std :: cout << "Animal  Costructor Called" << std :: endl;
 }
 
-
-void Animal :: operator=(Animal &copy)
+Animal &Animal :: operator=(const Animal &copy)
 {
     this->type = copy.type;
+
+    return(*this);
 }
 
-Animal :: Animal(Animal &copy)
+Animal :: Animal(const Animal &copy)
 {
     *this = copy;
 }
 
 void Animal :: makeSound() const
 {
-    std :: cout << "Animal Make Sound" << std :: endl;
+    std :: cout << "Animal Make Sound !!!" << std :: endl;
 }
 
 

@@ -7,8 +7,8 @@
 {
     public :
         Cat();
-        Cat(Cat &copy);
-        void operator = (Cat &copy);
+        Cat(const Cat &copy);
+        Cat &operator = (const Cat &copy);
         void makeSound() const; 
         ~Cat();
 };
